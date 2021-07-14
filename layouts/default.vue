@@ -4,33 +4,46 @@
  * @Author: 松岛川树
  * @Date: 2021-06-28 00:58:47
  * @LastEditors: 松岛川树
- * @LastEditTime: 2021-07-14 08:07:49
+ * @LastEditTime: 2021-07-14 16:01:02
  * @FilePath: \blogBackstage\layouts\default.vue
 -->
 <template>
-  <a-layout id="components-layout-demo-custom-trigger">
+  <div>
+    <a-layout v-if="hide" id="components-layout-demo-custom-trigger">
       <Sider />
-    <a-layout>
-      <Header />
-      <a-layout-content
-        :style="{ margin: '24px 16px', padding: '24px', background: '#fff', minHeight: '280px' }"
-      >
-         <Nuxt />
-      </a-layout-content>
+      <a-layout>
+        <Header />
+        <a-layout-content
+          :style="{
+            margin: '24px 16px',
+            padding: '24px',
+            background: '#fff',
+            minHeight: '280px'
+          }"
+        >
+          <Nuxt />
+        </a-layout-content>
+      </a-layout>
     </a-layout>
-  </a-layout>
-</template>
+    <div v-else>
+      <Nuxt />
+    </div>
+  </div>
 </template>
 <script>
-import Sider from '~/components/Sider.vue';
+import Sider from "~/components/Sider.vue";
 export default {
   components: { Sider },
   data() {
     return {
       collapsed: false,
+      hide: true
     };
   },
-    created() {
+  created() {
+    if (this.$route.name == "user-login") {
+      this.hide = false;
+    }
     if (typeof window !== "undefined") {
       let loading = document.getElementById("app");
       if (loading !== null) {
@@ -38,6 +51,7 @@ export default {
       }
     }
   },
+  mounted() {}
 };
 </script>
 <style>

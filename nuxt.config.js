@@ -4,7 +4,7 @@
  * @Author: 松岛川树
  * @Date: 2021-07-13 22:32:11
  * @LastEditors: 松岛川树
- * @LastEditTime: 2021-07-14 08:16:18
+ * @LastEditTime: 2021-07-14 15:00:55
  * @FilePath: \blogBackstage\nuxt.config.js
  */
 export default {
@@ -32,9 +32,34 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '@/plugins/antd-ui'
+    {
+      src: '@/plugins/antd-ui',
+      ssr: true
+    },
+    {
+      src: '@/plugins/http.js',
+      ssr: false
+    },
+    {
+      src: '@/plugins/api.js',
+      ssr: false
+    },
+    {
+      src: '@/plugins/vue-cookies.js',
+      ssr: false
+    }
   ],
-
+  //配置跨域请求
+  proxy: {
+    '/api': {
+      // secure: false, // 如果是https接口，需要配置这个参数
+      target: 'http://127.0.0.1:7001', // 目标接口域名
+      pathRewrite: {
+        '^/api': '/', // 把 /api 替换成 /
+        changeOrigin: true // 表示是否跨域
+      }
+    }
+  },
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
@@ -46,6 +71,7 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/axios',
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

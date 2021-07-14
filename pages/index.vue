@@ -4,7 +4,7 @@
  * @Author: 松岛川树
  * @Date: 2021-07-13 22:32:11
  * @LastEditors: 松岛川树
- * @LastEditTime: 2021-07-14 08:33:11
+ * @LastEditTime: 2021-07-14 11:22:12
  * @FilePath: \blogBackstage\pages\index.vue
 -->
 <template>
@@ -19,7 +19,6 @@ export default Vue.extend({
     return {};
   },
   async asyncData({ redirect, params }) {
-    console.log(params);
     redirect("/dashboard/workplace");
   }
 });
