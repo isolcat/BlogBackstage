@@ -1,0 +1,110 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: 松岛川树
+ * @Date: 2021-07-14 07:52:18
+ * @LastEditors: 松岛川树
+ * @LastEditTime: 2021-07-14 07:53:00
+ * @FilePath: \blogBackstage\app.html
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <style>
+      html,
+      body,
+      #app {
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+        transition: opacity 1s;
+      }
+      .loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        min-height: 100vh;
+        z-index: 999999;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-align-items: center;
+        align-items: center;
+        background-color: #fff;
+      }
+      @-webkit-keyframes loading-4 {
+        0% {
+          transform: scale(0);
+          opacity: 0;
+        }
+        50% {
+          transform: scale(0);
+          opacity: 1;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 0;
+        }
+      }
+      .loading-4 {
+        position: relative;
+        width: 60px;
+        height: 60px;
+      }
+      .loading-4 i {
+        display: block;
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        border-radius: 50%;
+        background: #333;
+        left: 0;
+        top: 0;
+        opacity: 0;
+      }
+      .loading-4 i:nth-child(1) {
+        -webkit-animation: loading-4 1s linear 0s infinite;
+      }
+      .loading-4 i:nth-child(2) {
+        -webkit-animation: loading-4 2s linear 0.4s infinite;
+      }
+      .loading-4 i:nth-child(3) {
+        -webkit-animation: loading-4 2s linear 0.4s infinite;
+      }
+    </style>
+    {{HEAD}}
+  </head>
+  <body>
+    <!-- built files will be auto injected -->
+    <div id="app">
+      <div class="loader">
+        <div class="loading-4">
+          <i></i>
+          <i></i>
+          <i></i>
+        </div>
+      </div>
+    </div>
+    {{APP}}
+  </body>
+  <script>
+    var OriginTitile = document.title;
+    var titleTime;
+    document.addEventListener("visibilitychange", function() {
+      if (document.hidden) {
+        document.title = "(つェ⊂)我藏好了哦~ " + OriginTitile;
+        clearTimeout(titleTime);
+      } else {
+        document.title = "(*´∇｀*) 被你发现啦~ " + OriginTitile;
+        titleTime = setTimeout(function() {
+          document.title = OriginTitile;
+        }, 2000);
+      }
+    });
+  </script>
+</html>
