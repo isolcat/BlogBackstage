@@ -4,3 +4,6 @@
 .page-enter,.page-leave-active{
     opacity: 0;
 }
+.container {
+    min-height: 90vh;
+  }

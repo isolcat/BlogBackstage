@@ -4,7 +4,7 @@
  * @Author: 松岛川树
  * @Date: 2021-07-14 08:30:14
  * @LastEditors: 松岛川树
- * @LastEditTime: 2021-07-14 09:11:58
+ * @LastEditTime: 2021-07-14 17:55:34
  * @FilePath: \blogBackstage\pages\dashboard\workplace.vue
 -->
 <template>
@@ -28,7 +28,5 @@ export default Vue.extend({
 </script>
 
 <style lang="less" scoped>
-.container {
-  min-height: 90vh;
-}
+
 </style>

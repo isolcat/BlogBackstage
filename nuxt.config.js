@@ -4,7 +4,7 @@
  * @Author: 松岛川树
  * @Date: 2021-07-13 22:32:11
  * @LastEditors: 松岛川树
- * @LastEditTime: 2021-07-14 15:00:55
+ * @LastEditTime: 2021-07-15 16:20:10
  * @FilePath: \blogBackstage\nuxt.config.js
  */
 export default {
@@ -27,7 +27,7 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    '~assets/css/main.css'
+    '~assets/css/main.css',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -36,6 +36,7 @@ export default {
       src: '@/plugins/antd-ui',
       ssr: true
     },
+
     {
       src: '@/plugins/http.js',
       ssr: false
@@ -87,9 +88,6 @@ export default {
           }
         ]
       ]
-    },
-    extend(config) {
-      config.resolve.alias['@ant-design/icons/lib/dist$'] = path.resolve(__dirname, './plugins/antd-icons.js') // 引入需要的
     },
     extend(config, { isDev, isClient }) {
       config.module.rules.push({

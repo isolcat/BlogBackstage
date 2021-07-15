@@ -4,7 +4,7 @@
  * @Author: 松岛川树
  * @Date: 2021-06-28 00:58:47
  * @LastEditors: 松岛川树
- * @LastEditTime: 2021-07-14 16:01:02
+ * @LastEditTime: 2021-07-15 09:34:58
  * @FilePath: \blogBackstage\layouts\default.vue
 -->
 <template>
@@ -17,7 +17,6 @@
           :style="{
             margin: '24px 16px',
             padding: '24px',
-            background: '#fff',
             minHeight: '280px'
           }"
         >
@@ -56,7 +55,6 @@ export default {
 </script>
 <style>
 #components-layout-demo-custom-trigger .trigger {
-  font-size: 18px;
   line-height: 64px;
   padding: 0 24px;
   cursor: pointer;

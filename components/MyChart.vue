@@ -1,6 +1,6 @@
 <template>
  <div class="container">
- index
+
  </div>
 </template>
 <script>
@@ -13,7 +13,7 @@ export default {
   },
   data() {
     return {
-
+  deadline: Date.now() + 1000 * 60 ,
     };
   },
   computed: {

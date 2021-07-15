@@ -4,7 +4,7 @@
  * @Author: 松岛川树
  * @Date: 2021-07-13 22:32:11
  * @LastEditors: 松岛川树
- * @LastEditTime: 2021-07-14 11:22:12
+ * @LastEditTime: 2021-07-15 10:14:30
  * @FilePath: \blogBackstage\pages\index.vue
 -->
 <template>
@@ -19,13 +19,11 @@ export default Vue.extend({
     return {};
   },
   async asyncData({ redirect, params }) {
-    redirect("/dashboard/workplace");
+    redirect("/dashboard/analysis");
   }
 });
 </script>
 
 <style lang="less" scoped>
-.container {
-  min-height: 90vh;
-}
+  
 </style>
