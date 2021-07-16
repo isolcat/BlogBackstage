@@ -4,7 +4,7 @@
  * @Author: 松岛川树
  * @Date: 2021-07-14 14:05:49
  * @LastEditors: 松岛川树
- * @LastEditTime: 2021-07-15 15:57:44
+ * @LastEditTime: 2021-07-16 08:38:50
  * @FilePath: \blogBackstage\pages\user\login.vue
 -->
 <template>
@@ -34,7 +34,9 @@
         <div>
           <a @click="hide = !hide">忘记密码 </a>
           <a-button type="primary" @click="clickLogin">
-            登录
+            <span :style="color">
+              登录
+            </span>
           </a-button>
         </div>
       </form>
@@ -61,7 +63,9 @@
           >
             <a-tooltip class="suffix" slot="suffix">
               <a-button type="primary" @click="sendCode" v-if="cilckTime">
-                发送验证码
+                <span :style="color">
+                  发送验证码
+                </span>
               </a-button>
               <a-button v-else> <Time remainTime="59" />秒后重新发送 </a-button>
             </a-tooltip>
@@ -70,7 +74,11 @@
 
         <div>
           <a @click="hide = !hide">立即登录 </a>
-          <a-button type="primary"> 提交 </a-button>
+          <a-button type="primary">
+            <span :style="color">
+              提交
+            </span>
+          </a-button>
         </div>
       </form>
     </div>
@@ -89,7 +97,8 @@ export default {
       passWord: "",
       hide: true,
       cilckTime: true,
-      time: 60
+      time: 60,
+      color: "color: #fff;"
     };
   },
   async created() {},
@@ -111,6 +120,7 @@ export default {
 
 <style lang="less" scoped>
 @import "~/assets/css/flex.less";
+
 .container {
   min-height: 100vh;
   display: grid;
@@ -120,11 +130,13 @@ export default {
   .left {
     background: url("~/assets/img/bk.jpg") no-repeat center center fixed;
     .backgroundCover();
-    color: aliceblue;
     font-size: 3.125rem;
     .flex();
     .flexContentCenter();
     .flexItemsCenter();
+    div {
+      color: rgb(255, 255, 255);
+    }
   }
 
   // right容器

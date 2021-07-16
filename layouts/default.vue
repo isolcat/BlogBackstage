@@ -4,7 +4,7 @@
  * @Author: 松岛川树
  * @Date: 2021-06-28 00:58:47
  * @LastEditors: 松岛川树
- * @LastEditTime: 2021-07-15 09:34:58
+ * @LastEditTime: 2021-07-15 17:55:44
  * @FilePath: \blogBackstage\layouts\default.vue
 -->
 <template>
@@ -62,12 +62,7 @@ export default {
 }
 
 #components-layout-demo-custom-trigger .trigger:hover {
-  color: #1890ff;
+  color: #516B91;
 }
 
-#components-layout-demo-custom-trigger .logo {
-  height: 32px;
-  background: rgba(255, 255, 255, 0.2);
-  margin: 16px;
-}
 </style>

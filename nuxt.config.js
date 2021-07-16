@@ -4,7 +4,7 @@
  * @Author: 松岛川树
  * @Date: 2021-07-13 22:32:11
  * @LastEditors: 松岛川树
- * @LastEditTime: 2021-07-15 16:20:10
+ * @LastEditTime: 2021-07-15 17:45:45
  * @FilePath: \blogBackstage\nuxt.config.js
  */
 export default {
@@ -36,7 +36,9 @@ export default {
       src: '@/plugins/antd-ui',
       ssr: true
     },
-
+    {
+      src: '@/plugins/echarts'
+    },
     {
       src: '@/plugins/http.js',
       ssr: false
@@ -97,8 +99,8 @@ export default {
           options: {
             lessOptions: {
               modifyVars: {
-                'primary-color': '#8abcd1', // 自定义 ant-design-vue 主题颜色
-                'link-color': '#8abcd1',
+                'primary-color': '#516B91', // 自定义 ant-design-vue 主题颜色
+                'link-color': '#516B91',
                 'border-radius-base': '2px'
               },
               javascriptEnabled: true

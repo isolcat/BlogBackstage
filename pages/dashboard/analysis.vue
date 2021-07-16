@@ -4,7 +4,7 @@
  * @Author: 松岛川树
  * @Date: 2021-07-14 09:27:34
  * @LastEditors: 松岛川树
- * @LastEditTime: 2021-07-15 16:29:20
+ * @LastEditTime: 2021-07-15 17:57:35
  * @FilePath: \blogBackstage\pages\dashboard\analysis.vue
 -->
 
@@ -22,8 +22,9 @@
               339
             </h1>
             <div style="background: #eee; padding: 30px">
-              <a-row >
+              <a-row>
                 <a-col :xs="24" :sm="24" :md="24" :lg="24" :xl="12">
+                  <div class="👈">
                     <a-statistic
                       title="周同比"
                       :value="11.28"
@@ -36,8 +37,10 @@
                         <a-icon type="arrow-up" />
                       </template>
                     </a-statistic>
+                  </div>
                 </a-col>
                 <a-col :xs="24" :sm="24" :md="24" :lg="24" :xl="12">
+                  <div class="👉">
                     <a-statistic
                       title="日同比"
                       :value="9.3"
@@ -50,6 +53,7 @@
                         <a-icon type="arrow-down" />
                       </template>
                     </a-statistic>
+                  </div>
                 </a-col>
               </a-row>
             </div>
@@ -168,6 +172,11 @@ export default Vue.extend({
       height: 300px;
       h1 {
         font-size: 1.5625rem;
+         color: #516b91;
+      }
+      .👈,
+      .👉 {
+        text-align: left;
       }
     }
   }

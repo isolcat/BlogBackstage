@@ -1,6 +1,7 @@
 <template>
  <div class="container">
- index
+<Echarts query='1'/>
+<Echarts query='2'/>
  </div>
 </template>
 <script>

@@ -4,14 +4,19 @@
  * @Author: 松岛川树
  * @Date: 2021-07-13 23:02:14
  * @LastEditors: 松岛川树
- * @LastEditTime: 2021-07-14 09:28:33
+ * @LastEditTime: 2021-07-15 17:59:26
  * @FilePath: \blogBackstage\components\Sider.vue
 -->
 
 <template>
-  <a-layout-sider v-model="$store.state.collapsed" :trigger="null" collapsible>
+  <a-layout-sider
+    style="background: #fff"
+    v-model="$store.state.collapsed"
+    :trigger="null"
+    collapsible
+  >
     <div class="logo" />
-    <a-menu theme="dark" mode="inline" :default-selected-keys="['1']">
+    <a-menu mode="inline" :default-selected-keys="['1']">
       <a-menu-item
         key="1"
         @click="$router.push({ name: 'dashboard-analysis' })"
@@ -44,4 +49,10 @@ export default {
 };
 </script>
 
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+.logo {
+  height: 32px;
+  background: #516b91b0;
+  margin: 16px;
+}
+</style>

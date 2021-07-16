@@ -7,3 +7,6 @@
 .container {
     min-height: 90vh;
   }
+  *{
+      color: #516B91;
+  }
